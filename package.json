@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Node.js boilerplate package",
+  "keywords": [
+    "[]"
+  ],
+  "homepage": "https://github.com/Oksana1992-hash/frontend-project-46#readme",
+  "bugs": {
+    "url": "https://github.com/Oksana1992-hash/frontend-project-46/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oksana1992-hash/frontend-project-46.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}
