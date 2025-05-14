@@ -2,7 +2,10 @@ install:
 	npm ci
 
 gendiff:
-	node bin/gendiff.js -h
+	bin/gendiff.js -h
+
+start:
+	bin/gendiff.js __fixtures__/file1.json __fixtures__/file2.json
 
 help:
 	echo help
