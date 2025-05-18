@@ -36,13 +36,10 @@ jobs:
       - name: Test & publish code coverage
           # Publish code coverage on Code Climate
           # https://github.com/paambaati/codeclimate-action
-        uses: qltysh/qlty-action/coverage@v1
-        with:
-            token: {{secrets.QLTY_COVERAGE_TOKEN}}
-            files: target/lcov.info
+        uses: paambaati/codeclimate-action@v5.0.0
           # Add Code Climate secret key
         env:
-          QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true
