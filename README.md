@@ -16,6 +16,10 @@ Follow these steps in the command prompt sequentially:
 ## Hexlet tests and linter status:
 [![Actions Status](https://github.com/Oksana1992-hash/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Oksana1992-hash/frontend-project-46/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/dc6fe6828e9d8c805720/maintainability)](https://codeclimate.com/github/Oksana1992-hash/frontend-project-46/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dc6fe6828e9d8c805720/test_coverage)](https://codeclimate.com/github/Oksana1992-hash/frontend-project-46/test_coverage)
+
 ## Description
 
 Difference Calculator is a program that determines the difference between two data structures. This is a popular task, for which there are many online services, for example http://www.jsondiff.com /. A similar mechanism is used when outputting tests or when automatically tracking changes in configuration files.
