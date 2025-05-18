@@ -1,7 +1,4 @@
-# Name of workflow
-name: Node CI
-
-# Trigger the workflow on push or pull request
+name: genDiff
 on:
   - push
   - pull_request
@@ -34,15 +31,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: make install
-      - run: make test
       - run: make lint
+      - run: make test
       - name: Test & publish code coverage
-        # Publish code coverage on Code Climate
-        # https://github.com/paambaati/codeclimate-action
-        uses: paambaati/codeclimate-action@v5.0.0
-        # Add Code Climate secret key
+          # Publish code coverage on Code Climate
+          # https://github.com/paambaati/codeclimate-action
+        uses: qltysh/qlty-action/coverage@v1
+        with:
+            token: {{secrets.QLTY_COVERAGE_TOKEN}}
+            files: target/lcov.info
+          # Add Code Climate secret key
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          QLTY_COVERAGE_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
         with:
           coverageCommand: make test-coverage
           debug: true
