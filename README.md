@@ -18,6 +18,8 @@ Follow these steps in the command prompt sequentially:
 
 [![Maintainability](https://qlty.sh/badges/99fcc0c5-670f-41d8-b6af-116c60ee43a3/maintainability.svg)](https://qlty.sh/gh/Oksana1992-hash/projects/frontend-project-46)
 
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Oksana1992-hash_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Oksana1992-hash_frontend-project-46)
+
 ## Description
 
 Difference Calculator is a program that determines the difference between two data structures. This is a popular task, for which there are many online services, for example http://www.jsondiff.com /. A similar mechanism is used when outputting tests or when automatically tracking changes in configuration files.
