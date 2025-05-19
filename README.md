@@ -20,7 +20,7 @@ Follow these steps in the command prompt sequentially:
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Oksana1992-hash_frontend-project-46&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Oksana1992-hash_frontend-project-46)
 
-[![Node CI](https://github.com/Oksana1992-hash/frontend-project-46/actions/workflows/sonarcube.yml/badge.svg)](https://github.com/Oksana1992-hash/frontend-project-46/actions/workflows/sonarcube.yml)
+[![Build](https://github.com/Oksana1992-hash/frontend-project-46/actions/workflows/build.yml/badge.svg)](https://github.com/Oksana1992-hash/frontend-project-46/actions/workflows/build.yml)
 
 ## Description
 
