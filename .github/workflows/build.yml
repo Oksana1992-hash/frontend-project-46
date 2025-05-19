@@ -3,10 +3,10 @@ name: Build
 
 # Trigger the workflow on push or pull request
 on:
-  push
+  push:
     branches:
       - main
-  pull_request
+  pull_request:
     types: [opened, synchronize, reopened]
 
 env:
