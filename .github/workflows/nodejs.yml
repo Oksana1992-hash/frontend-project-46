@@ -33,13 +33,19 @@ jobs:
       - run: make install
       - run: make lint
       - run: make test
-      - name: Test & publish code coverage
+      - name: Download and install Code Climate test reporter
+        run: |
+          curl -L https://github.com/codeclimate/test-reporter/releases/latest/download/test-reporter-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+          sudo mv ./cc-test-reporter /usr/local/bin/cc-test-reporter
+      - name: Run coverage and upload to Code Climate
           # Publish code coverage on Code Climate
           # https://github.com/paambaati/codeclimate-action
         uses: paambaati/codeclimate-action@v9.0.0
           # Add Code Climate secret key
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-          debug: true
+        run: |
+          cc-test-reporter before-build
+          make test-coverage
+          cc-test-reporter after-build --exit-code $?
