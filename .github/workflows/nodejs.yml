@@ -32,9 +32,9 @@ jobs:
 
       - name: Download and install Code Climate test reporter
         run: |
-          curl -L https://github.com/codeclimate/test-reporter/releases/latest/download/test-reporter-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-          sudo mv ./cc-test-reporter /usr/local/bin/cc-test-reporter
+        curl -L https://github.com/codeclimate/test-reporter/releases/latest/download/test-reporter-linux-amd64 -o /tmp/cc-test-reporter
+        chmod +x /tmp/cc-test-reporter
+        sudo mv /tmp/cc-test-reporter /usr/local/bin/cc-test-reporter
 
       - name: Run coverage and upload to Code Climate
         env:
@@ -42,4 +42,7 @@ jobs:
         run: |
           cc-test-reporter before-build
           make test-coverage
+          
+      - name: Run cc-test-reporter after-build
+        run: 
           cc-test-reporter after-build --exit-code $?
