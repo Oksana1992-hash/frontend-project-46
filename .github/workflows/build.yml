@@ -1,16 +1,19 @@
 # Name of workflow
-name: Node CI
+name: Build
 
 # Trigger the workflow on push or pull request
 on:
   - push
+      branches:
+        - main
   - pull_request
 
 env:
   CI: true
 
 jobs:
-  build:
+  sonarqube:
+    name: SonarQube
 
     # The type of machine to run the job on
     runs-on: ubuntu-latest
@@ -31,8 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         # The Node.js version to configure
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - run: make install
       - run: make lint
       - run: make test-coverage
