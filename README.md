@@ -35,3 +35,6 @@ Utility features:
 
 #### Comparison of flat format files .json
 <a href="https://asciinema.org/a/GBrx5zpWLqP8TeuOjnH4UcWkz" target="_blank"><img src="https://asciinema.org/a/GBrx5zpWLqP8TeuOjnH4UcWkz.svg" /></a>
+
+#### Comparison of flat format files .yml
+<a href="https://asciinema.org/a/EIQorIEojQRlUTkrk3fUt4880" target="_blank"><img src="https://asciinema.org/a/EIQorIEojQRlUTkrk3fUt4880.svg" /></a>
