@@ -1,4 +1,4 @@
-import path from 'path';
+import path, { dirname } from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { expect, test } from '@jest/globals';
@@ -6,21 +6,20 @@ import { expect, test } from '@jest/globals';
 import gendiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 const getFixturesPath = (filename) => path.resolve(__dirname, '..', '__fixtures__', filename);
 const result = fs.readFileSync(getFixturesPath('result.txt'), 'utf-8').trim();
 
-test('gendiff for flat json', () => {
-  const filePath1 = getFixturesPath('file1.json');
-  const filePath2 = getFixturesPath('file2.json');
+test('gendiff for nested structures', () => {
+  const fileJsonPath1 = getFixturesPath('file1.json');
+  const fileJsonPath2 = getFixturesPath('file2.json');
+  const fileYamlPath1 = getFixturesPath('file1.yaml');
+  const fileYamlPath2 = getFixturesPath('file2.yaml');
+  const fileYmlPath1 = getFixturesPath('file1.yml');
+  const fileYmlPath2 = getFixturesPath('file2.yml');
 
-  expect(gendiff(filePath1, filePath2)).toEqual(result);
-});
-
-test('gendiff for flat yaml', () => {
-  const filePath1 = getFixturesPath('file1.yml');
-  const filePath2 = getFixturesPath('file2.yml');
-
-  expect(gendiff(filePath1, filePath2)).toEqual(result);
+  expect(gendiff(fileJsonPath1, fileJsonPath2)).toEqual(result);
+  expect(gendiff(fileYmlPath1, fileYmlPath2)).toEqual(result);
+  expect(gendiff(fileYamlPath1, fileYamlPath2)).toEqual(result);
 });
