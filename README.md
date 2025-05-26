@@ -38,3 +38,6 @@ Utility features:
 
 #### Comparison of flat format files .yml
 <a href="https://asciinema.org/a/EIQorIEojQRlUTkrk3fUt4880" target="_blank"><img src="https://asciinema.org/a/EIQorIEojQRlUTkrk3fUt4880.svg" /></a>
+
+#### Comparing files with a nested structure with output in "Stylish" format
+<a href="https://asciinema.org/a/LFalJtHW06m2Emx6dhyuBo7AI" target="_blank"><img src="https://asciinema.org/a/LFalJtHW06m2Emx6dhyuBo7AI.svg" /></a>
