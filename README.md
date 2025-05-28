@@ -41,3 +41,6 @@ Utility features:
 
 #### Comparing files with a nested structure with output in "Stylish" format
 <a href="https://asciinema.org/a/LFalJtHW06m2Emx6dhyuBo7AI" target="_blank"><img src="https://asciinema.org/a/LFalJtHW06m2Emx6dhyuBo7AI.svg" /></a>
+
+#### Comparing files with a nested structure with output in "Plain" format
+<a href="https://asciinema.org/a/UuiiyDTkrlMLK8NTR21LvdzVS" target="_blank"><img src="https://asciinema.org/a/UuiiyDTkrlMLK8NTR21LvdzVS.svg" /></a>
