@@ -1,9 +1,13 @@
 import genStylishFormat from './stylish.js';
+import genPlainFormat from './plain.js';
 
 export default (tree, format) => {
-  if (format === 'stylish') {
-    return genStylishFormat(tree);
-  }
-
-  throw Error(`${format} is not support`);
+    switch (format) {
+        case 'stylish':
+            return genStylishFormat(tree);
+        case 'plain':
+            return genPlainFormat(tree);
+        default:
+            throw Error(`${format} is not support`);
+    }
 };
