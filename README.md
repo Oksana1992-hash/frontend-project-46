@@ -44,3 +44,6 @@ Utility features:
 
 #### Comparing files with a nested structure with output in "Plain" format
 <a href="https://asciinema.org/a/UuiiyDTkrlMLK8NTR21LvdzVS" target="_blank"><img src="https://asciinema.org/a/UuiiyDTkrlMLK8NTR21LvdzVS.svg" /></a>
+
+#### Comparing files with a nested structure with output in "Json" format
+<a href="https://asciinema.org/a/fljV1TZIJA50TOWhUr2wDjAPp" target="_blank"><img src="https://asciinema.org/a/fljV1TZIJA50TOWhUr2wDjAPp.svg" /></a>
