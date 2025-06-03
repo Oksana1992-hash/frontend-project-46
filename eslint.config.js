@@ -13,6 +13,9 @@ export default defineConfig([
     extends: ['js/recommended'],
     languageOptions: {
       globals: globals.node
+    },
+    rules: {
+      '@stylistic/js/semi': ['error', 'never']
     }
   }
 ]);
