@@ -16,6 +16,14 @@ const buildTree = (obj1, obj2) => {
       return { key, value: obj1[key], status: 'unchanged' };
     }
 
+    const isObj1Array = Array.isArray(obj1[key]);
+    const isObj2Array = Array.isArray(obj2[key]);
+
+    if (isObj1Array && isObj2Array) {
+      const child = buildTree(obj1[key], obj2[key]);
+      return { key, value: child, status: 'nested' };
+    }
+
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       const child = buildTree(obj1[key], obj2[key]);
       return { key, value: child, status: 'nested' };
