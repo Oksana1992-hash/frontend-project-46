@@ -1,32 +1,32 @@
-import _ from 'lodash';
+import _ from 'lodash'
 
 const buildTree = (obj1, obj2) => {
-  const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
+  const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)))
 
   const diff = keys.map((key) => {
     if (!Object.hasOwn(obj1, key)) {
-      return { key, value: obj2[key], status: 'added' };
+      return { key, value: obj2[key], status: 'added' }
     }
 
     if (!Object.hasOwn(obj2, key)) {
-      return { key, value: obj1[key], status: 'removed' };
+      return { key, value: obj1[key], status: 'removed' }
     }
 
     if (_.isEqual(obj1[key], obj2[key])) {
-      return { key, value: obj1[key], status: 'unchanged' };
+      return { key, value: obj1[key], status: 'unchanged' }
     }
 
-    const isObj1Array = Array.isArray(obj1[key]);
-    const isObj2Array = Array.isArray(obj2[key]);
+    const isObj1Array = Array.isArray(obj1[key])
+    const isObj2Array = Array.isArray(obj2[key])
 
     if (isObj1Array && isObj2Array) {
-      const child = buildTree(obj1[key], obj2[key]);
-      return { key, value: child, status: 'nested' };
+      const child = buildTree(obj1[key], obj2[key])
+      return { key, value: child, status: 'nested' }
     }
 
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
-      const child = buildTree(obj1[key], obj2[key]);
-      return { key, value: child, status: 'nested' };
+      const child = buildTree(obj1[key], obj2[key])
+      return { key, value: child, status: 'nested' }
     }
 
     return {
@@ -34,10 +34,10 @@ const buildTree = (obj1, obj2) => {
       oldValue: obj1[key],
       newValue: obj2[key],
       status: 'modified',
-    };
-  });
+    }
+  })
 
-  return diff;
-};
+  return diff
+}
 
-export default buildTree;
+export default buildTree
