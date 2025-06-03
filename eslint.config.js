@@ -15,7 +15,7 @@ export default defineConfig([
       globals: globals.node
     },
     rules: {
-      '@stylistic/js/semi': ['error', 'never']
+      'semi': ['error', 'never']
     }
   }
 ]);
