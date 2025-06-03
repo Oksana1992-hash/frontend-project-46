@@ -32,7 +32,7 @@ const genStylishFormat = (tree) => {
       nested: ({ key, value }) => `  ${indent(depth)}  ${key}: ${iter(value, depth + 1)}`,
       modified: ({ key, oldValue, newValue }) => [
         `  ${indent(depth)}- ${key}: ${stringify(oldValue, depth + 1)}`,
-        `  ${indent(depth)}+ ${key}: ${stringify(newValue, depth + 1)}`
+        `  ${indent(depth)}+ ${key}: ${stringify(newValue, depth + 1)}`,
       ].join('\n'),
     }
 
