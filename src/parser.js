@@ -1,13 +1,13 @@
 import yaml from 'js-yaml'
 
 export default (data, format) => {
-  if (format === '.json') {
-    return JSON.parse(data)
+  switch (format) {
+    case 'json':
+      return JSON.parse(data)
+    case 'yml':
+    case 'yaml':
+      return yaml.load(data)
+    default:
+      throw Error('unknow extension')
   }
-
-  if (format === '.yml' || format === '.yaml') {
-    return yaml.load(data)
-  }
-
-  throw Error('unknow extension')
 }
